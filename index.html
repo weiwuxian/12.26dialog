@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .box {
+            position: relative;
+            border-radius: 20px;
+        }
+        
+        .box h1 {
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+        }
+        
+        .box p {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        
+        .box p span {
+            width: 100px;
+            height: 35px;
+            border: 1px solid #eee;
+            text-align: center;
+            border-radius: 10px;
+            cursor: default;
+        }
+        
+        .mark {
+            background: #f00;
+        }
+        
+        .btn {
+            padding: 5px 15px;
+            border: 1px solid #666;
+            border-radius: 10px;
+            cursor: default;
+            display: inline-block;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn">
+        点击出现弹窗
+    </div>
+    <script src="js/script.js"></script>
+    <script type="text/javascript">
+        var btn = document.querySelector('.btn');
+        var btn1 = document.querySelector('.btn1');
+        var box = document.querySelector(".box");
+        var obj = {
+            width: 300,
+            height: 300,
+            background: 'rgba(0,0,0,0.3)',
+            title: '这是一个弹窗',
+            btn: ['确定', '取消'],
+            sure: function() {
+                alert("确定要关闭吗")
+            },
+            close: function() {
+                alert("真的要关闭吗")
+            }
+        }
+        btn.onclick = function() {
+            new fun(obj);
+        }
+    </script>
+</body>
+
+</html>
